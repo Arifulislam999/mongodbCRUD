@@ -15,7 +15,7 @@ const EditBlog = ({ blog }) => {
     setLoading(true);
     try {
       const user = { name, email };
-      await fetch(`/api/blogs?id=${blog._id}`, {
+      await fetch(`/api/blogs?id=${blog?._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

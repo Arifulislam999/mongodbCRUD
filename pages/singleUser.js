@@ -12,7 +12,7 @@ const SingleUser = ({ user }) => {
   const router = useRouter();
   const handlerDelete = async () => {
     try {
-      await fetch(`/api/blogs?id=${user._id}`, {
+      await fetch(`/api/blogs?id=${user?._id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -22,7 +22,7 @@ const SingleUser = ({ user }) => {
     } catch (error) {
       console.log(error);
     }
-    console.log("click");
+    console.log(user);
   };
   return (
     <div className="w-full max-w-sm bg-white border border-gray-200 mt-4 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 arif-1 ">
