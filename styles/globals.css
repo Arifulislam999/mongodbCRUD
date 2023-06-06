@@ -25,3 +25,18 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+.arif {
+  /* display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 2px 8px; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+.arif-1:hover {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.015);
+  /* cursor: pointer; */
+}
