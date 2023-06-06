@@ -2,12 +2,14 @@ import React from "react";
 import { Roboto_Slab } from "next/font/google";
 import { BiEdit, BiTrashAlt } from "react-icons/bi";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Rb = Roboto_Slab({
   weight: "800",
   subsets: ["latin"],
 });
 const SingleUser = ({ user }) => {
+  const router = useRouter();
   const handlerDelete = async () => {
     try {
       await fetch(`/api/blogs?id=${user._id}`, {
@@ -16,6 +18,7 @@ const SingleUser = ({ user }) => {
           "Content-Type": "application/json",
         },
       });
+      router.push("/user");
     } catch (error) {
       console.log(error);
     }
@@ -42,7 +45,7 @@ const SingleUser = ({ user }) => {
       </div>
       <div className="flex flex-col items-center pb-10">
         <img
-          className="w-24 h-24 mb-3 mt-3 rounded-full shadow-lg"
+          className="w-24 h-24 mb-3 mt-3 rounded-full shadow-lg object-cover"
           src="https://images.pexels.com/photos/13087558/pexels-photo-13087558.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
           alt="Bonnie image"
         />

@@ -1,5 +1,6 @@
 const { MongoClient, ServerApiVersion } = require("mongodb");
-const uri = "mongodb+srv://arif:0irjUF567EE336RM@cluster0.ehq4rqq.mongodb.net/";
+const uri =
+  "mongodb+srv://arif:0irjUF567EE336RM@cluster0.ehq4rqq.mongodb.net/test_db";
 
 let cacheClient = null;
 
@@ -14,6 +15,7 @@ async function dbConnect() {
       },
     });
     await client.connect();
+    console.log("db connect.");
     cacheClient = client;
     return client;
   } finally {
